@@ -1,42 +1,111 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог о машинном обучении</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-{% block content %}
-    {% for post in object_list %}
-        <div style="margin-top: 1%">
-            <div class="post-entry">
-                <div class="bg-image card shadow-1-strong"
-                     style="background: radial-gradient(circle, rgb(219,198,245) 0%, rgb(185,141,239) 100%);">
-                    <div style="margin-left: 1%">
-                        <h2>{{ post.title }}</h2>
-                        <p>{{ post.body }}</p>
-                    </div>
-                </div>
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #444;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-right: 10px;
+            font-size: 1em;
+            color: white;
+            cursor: pointer;
+            transition: opacity 0.5s, color 0.5s;
+        }
+
+        nav button:hover {
+            opacity: 0.7;
+        }
+
+        nav button.active {
+            font-weight: bold;
+            color: #000;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Блог о машинном обучении</h1>
+        <nav>
+            <button class="active">Главная</button>
+            <button>О блоге</button>
+            <div>
+                <button>Авторизация</button>
+                <button>Регистрация</button>
             </div>
-        </div>
+        </nav>
+    </header>
 
-    {% endfor %}
-    <div class="pagination justify-content-center">
-    {% if is_paginated %}
+    <section>
+        <h2>Последние статьи</h2>
+        <!-- Здесь могут быть ваши статьи -->
 
-      {% if page_obj.has_previous %}
+        <h2>О блоге</h2>
+        <p>Блог о машинном обучении предоставляет информацию, советы и последние новости в области искусственного интеллекта и машинного обучения.</p>
 
-        <a class="btn btn-light mb-4 mr-1" href="?page=1">Первая</a>
-        <a class="btn btn-light mb-4 mr-1" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
-      {% endif %}
+        <img src="https://lh6.googleusercontent.com/FcswhDgzUC5hL9REfRn-ejF2OU50NT76RRWdhbkWGLP2WAIEKMfOhQqVvY0UJqUvTzzj0NGa6wEI2Q8HjAptUIyYylwXODvVg3MFC-sKsQRsQ8L3LifuEsC8WS-6senDCIT-Ba_q" alt="Машинное обучение">
+    </section>
 
-      {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-          <a class="btn btn-light mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-          <a class="btn btn-light mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-      {% endfor %}
+    <footer>
+        &copy; 2023 Блог о машинном обучении
+    </footer>
 
-      {% if page_obj.has_next %}
-        <a class="btn btn-light mb-4 mr-1" href="?page={{ page_obj.next_page_number }}">Следующая</a>
-        <a class="btn btn-light mb-4 mr-1" href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
-      {% endif %}
+    <script>
+        // JavaScript для обработки нажатия на кнопки навигации
+        const buttons = document.querySelectorAll('nav button');
 
-    {% endif %}
-  </div>
-{% endblock content %}
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
