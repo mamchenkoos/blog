@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="navbar-nav">
-                {% google_translate type='vertical' language='en' %}
+                {% google_translate type='vertical' %}
             </div>
             <div class="navbar-nav">
                 {% if user.is_authenticated %}
@@ -119,15 +119,15 @@
             </div>
         </nav>
     </header>
-    <section>
-        <h2>Последние статьи</h2>
-        <!-- Здесь могут быть ваши статьи -->
+<!--    <section>-->
+<!--        <h2>Последние статьи</h2>-->
+<!--        &lt;!&ndash; Здесь могут быть ваши статьи &ndash;&gt;-->
 
-        <h2>О блоге</h2>
-        <p>Блог о машинном обучении предоставляет информацию, советы и последние новости в области искусственного интеллекта и машинного обучения.</p>
+<!--        <h2>О блоге</h2>-->
+<!--        <p>Блог о машинном обучении предоставляет информацию, советы и последние новости в области искусственного интеллекта и машинного обучения.</p>-->
 
-        <img src="https://lh6.googleusercontent.com/FcswhDgzUC5hL9REfRn-ejF2OU50NT76RRWdhbkWGLP2WAIEKMfOhQqVvY0UJqUvTzzj0NGa6wEI2Q8HjAptUIyYylwXODvVg3MFC-sKsQRsQ8L3LifuEsC8WS-6senDCIT-Ba_q" alt="Машинное обучение">
-    </section>
+<!--        <img src="https://lh6.googleusercontent.com/FcswhDgzUC5hL9REfRn-ejF2OU50NT76RRWdhbkWGLP2WAIEKMfOhQqVvY0UJqUvTzzj0NGa6wEI2Q8HjAptUIyYylwXODvVg3MFC-sKsQRsQ8L3LifuEsC8WS-6senDCIT-Ba_q" alt="Машинное обучение">-->
+<!--    </section>-->
     <div>
         {% if messages %}
         	{% for message in messages %}
@@ -150,16 +150,16 @@
         &copy; 2023 Блог о машинном обучении
     </footer>
 </div>
-    <script>
-        // JavaScript для обработки нажатия на кнопки навигации
-        const buttons = document.querySelectorAll('nav button');
+<!--    <script>-->
+<!--        // JavaScript для обработки нажатия на кнопки навигации-->
+<!--        const buttons = document.querySelectorAll('nav button');-->
 
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                buttons.forEach(b => b.classList.remove('active'));
-                button.classList.add('active');
-            });
-        });
-    </script>
+<!--        buttons.forEach(button => {-->
+<!--            button.addEventListener('click', () => {-->
+<!--                buttons.forEach(b => b.classList.remove('active'));-->
+<!--                button.classList.add('active');-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
 </body>
 </html>

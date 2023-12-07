@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'users.apps.UsersConfig',
     'crispy_forms',
-    'google_translate',
+    'google_translate'
 ]
 
 MIDDLEWARE = [
